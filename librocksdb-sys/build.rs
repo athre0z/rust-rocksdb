@@ -353,7 +353,7 @@ fn main() {
         let target = env::var("TARGET").unwrap();
         // according to https://github.com/alexcrichton/cc-rs/blob/master/src/lib.rs#L2189
         if target.contains("apple") || target.contains("freebsd") || target.contains("openbsd") {
-            println!("cargo:rustc-link-lib=dylib=c++");
+            println!("cargo:rustc-link-lib=static=c++");
         } else if target.contains("linux") {
             println!("cargo:rustc-link-lib=dylib=stdc++");
         }
